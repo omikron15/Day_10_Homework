@@ -29,7 +29,11 @@ class Room
     end #End of song function
 
     def add_guest(guest)
-      @guests.push(guest)
+      if room_is_full?()
+        return "Room full! No Entry!"
+      else
+        @guests.push(guest)
+      end
     end #End of add_guest function
 
     def add_song(song)
@@ -43,5 +47,13 @@ class Room
     def remove_song(song)
       @songs.delete(song)
     end #End of remove_song function
+
+    def room_is_full?()
+        if @guests.count < @capacity
+          return false
+        else
+          return true
+        end
+    end #End of room_is_full function
 
 end #End of Room class
