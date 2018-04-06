@@ -25,8 +25,8 @@ class RoomTest < Minitest::Test
       assert_equal("Name", @room1.name)
   end
 
-  def test_get_room_size
-      assert_equal(10, @room1.size)
+  def test_get_room_capacity
+      assert_equal(10, @room1.capacity)
   end
 
   def test_get_room_guests
@@ -47,7 +47,7 @@ class RoomTest < Minitest::Test
   end
 
   def test_add_song_to_room
-      @room1.add_song(@guest3)
+      @room1.add_song(@song3)
       assert_equal([@song1, @song2, @song3], @room1.songs)
   end
 
@@ -57,7 +57,7 @@ class RoomTest < Minitest::Test
   end
 
   def test_remove_song_from_room
-      @room1.remove_song(@guest2)
+      @room1.remove_song(@song2)
       assert_equal([@song1], @room1.songs)
   end
 
