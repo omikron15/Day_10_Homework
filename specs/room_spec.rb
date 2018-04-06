@@ -41,4 +41,24 @@ class RoomTest < Minitest::Test
       assert_equal(5, @room1.price)
   end
 
+  def test_add_guest_to_room
+      @room1.add_guest(@guest3)
+      assert_equal([@guest1, @guest2, @guest3], @room1.guests)
+  end
+
+  def test_add_song_to_room
+      @room1.add_song(@guest3)
+      assert_equal([@song1, @song2, @song3], @room1.songs)
+  end
+
+  def test_remove_guest_from_room
+      @room1.remove_guest(@guest2)
+      assert_equal([@guest1], @room1.guests)
+  end
+
+  def test_remove_song_from_room
+      @room1.remove_song(@guest2)
+      assert_equal([@song1], @room1.songs)
+  end
+
 end #End of RoomTest class
