@@ -23,4 +23,12 @@ class GuestTest < Minitest::Test
       assert_equal(300, @guest1.money())
   end #End of test_get_guest_money function
 
+  def test_guest_can_afford__enough_money()
+      assert_equal(true, @guest1.can_afford?(100))
+  end #End of test_guest_can_afford__enough_money function
+
+  def test_guest_can_afford__not_enough_money()
+      assert_equal(false, @guest1.can_afford?(500))
+  end #End of test_guest_can_afford__not_enough_money function
+
 end #End of GuestTest class

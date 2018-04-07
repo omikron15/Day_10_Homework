@@ -29,11 +29,15 @@ class Room
     end #End of song function
 
     def add_guest(guest)
-      if room_is_full?()
-        return "Room full! No Entry!"
-      else
-        @guests.push(guest)
-      end
+
+    if room_is_full?()
+      return "Room full! No Entry!"
+    elsif guest.can_afford?(@price)
+      @guests.push(guest)
+    else
+      return "Guest can't afford entry! No Entry!"
+    end
+      
     end #End of add_guest function
 
     def add_song(song)

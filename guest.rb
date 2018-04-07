@@ -18,4 +18,12 @@ class Guest
         return @money
     end #End of money function
 
+    def can_afford?(price)
+        if price <= @money
+          return true
+        else
+          return false
+        end
+    end #End of can_afford? function
+
 end #End of Guest class
