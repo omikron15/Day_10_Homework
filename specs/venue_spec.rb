@@ -16,7 +16,7 @@ class VenueTest < Minitest::Test
 
       @room1 = Room.new("Name 1", 10, 5)
       @room2 = Room.new("Name 2", 3, 5)
-      @bar = Bar.new("The White Horse", 100)
+      @bar = Bar.new("Main Bar", 100)
 
       @song1 = Song.new("Song 1", "Artist 1", "Line from song 1")
       @song2 = Song.new("Song 2", "Artist 2", "Line from song 2")
@@ -64,6 +64,7 @@ class VenueTest < Minitest::Test
       @venue1.add_function(@room1)
       @venue1.add_function(@room2)
       assert_equal([@bar, @room1, @room2], @venue1.functions)
+      p @venue1
   end
 
 end #End of VenueTest class
